@@ -3,8 +3,6 @@ package com.gonghui.retrofit;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.annotation.NonNull;
-import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +19,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by tsj014 on 2017/7/24.
+ * Created by gonghui on 2017/7/24.
  */
 
 public class RetrofitFactory {
@@ -59,7 +57,7 @@ public class RetrofitFactory {
 
     private static Interceptor REWRITE_CACHE_CONTROL_INTERCEPTOR = new Interceptor() {
         @Override
-        public Response intercept(@NonNull Chain chain) throws IOException {
+        public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
             Response response = chain.proceed(request);
 
@@ -74,7 +72,7 @@ public class RetrofitFactory {
 
     private static Interceptor REWRITE_CACHE_CONTROL = new Interceptor() {
         @Override
-        public Response intercept(@NonNull Chain chain) throws IOException {
+        public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
             if (!isNetworkConnected()) {
                 request = request.newBuilder()

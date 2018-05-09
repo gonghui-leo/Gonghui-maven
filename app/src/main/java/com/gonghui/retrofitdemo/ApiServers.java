@@ -1,6 +1,4 @@
-package com.gonghui.maven;
-
-import org.json.JSONObject;
+package com.gonghui.retrofitdemo;
 
 import java.util.List;
 
